@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etkinlikler</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:30px;
+}
+
+.header h1{
+    color:#0f172a;
+}
+
+/* GRID */
+.container{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    color:#555;
+    margin-bottom:10px;
+}
+
+.tag{
+    display:inline-block;
+    background:#e0f2fe;
+    color:#0284c7;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* INSTAGRAM */
+.insta-section{
+    text-align:center;
+    margin:50px 20px;
+}
+
+.insta-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#E1306C;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li{
+        margin: 5px 0;
+    }
+
+    .header h1{
+        font-size: 22px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .btn{
+        display:block;
+        margin:8px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+     <div class="logo">🕌 Marmaris Camileri</div>
+    <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletişim.html">İletişim</a></li>
+         <li><a href="bilgi.html">İlçe Bilgi ve Hava Durumu</a></li>
+         <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Etkinlikler</h1>
+    <p>Derneğimizin yaptığı faaliyetler</p>
+</div>
+
+<!-- KARTLAR -->
+<div class="container">
+
+    <div class="card">
+        <h3>🌅 40 Günlük Sabah Namazı</h3>
+        <p>40 gün sabah namazına devam eden 4 kişi Umre ile ödüllendirildi.</p>
+        <span class="tag">Umre Kazanan</span>
+    </div>
+
+    <div class="card">
+        <h3>📖 Esma-ül Hüsna Dersleri</h3>
+        <p>Kuran ve Esma derslerinde başarılı öğrenciler yetiştirildi.</p>
+        <span class="tag">Eğitim</span>
+    </div>
+
+    <div class="card">
+        <h3>⚽ Yaz Futbol Turnuvası</h3>
+        <p>Yüzlerce çocuk katıldı, spor ve kardeşlik güçlendi.</p>
+        <span class="tag">Gençlik</span>
+    </div>
+
+    <div class="card">
+        <h3>🎁 Hediye Programı</h3>
+        <p>Çocuklara ve gençlere çeşitli hediyeler dağıtıldı.</p>
+        <span class="tag">Sosyal</span>
+    </div>
+
+    <div class="card">
+        <h3>🏢 Kurum Ziyaretleri</h3>
+        <p>Kurumlarla işbirliği ve sosyal bağlar güçlendirildi.</p>
+        <span class="tag">Ziyaret</span>
+    </div>
+
+    <div class="card">
+        <h3>🤝 Toplumsal Dayanışma</h3>
+        <p>Toplumda birlik ve dayanışma artırıldı.</p>
+        <span class="tag">Toplum</span>
+    </div>
+
+</div>
+
+<!-- INSTAGRAM -->
+<div class="insta-section">
+    <h2>📸 Tüm Etkinliklerimizi Gör</h2>
+    <p>Fotoğraflar için Instagram sayfamızı ziyaret edin</p>
+
+    <a href="https://instagram.com/merkezcamileri" target="_blank" class="insta-btn">
+        📷 Instagram’a Git
+    </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Marmaris Camileri
+</footer>
+
+</body>
+</html>

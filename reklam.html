@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reklam & Sponsor</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#f5f5f5;
+    margin:0;
+}
+
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+/* 🔵 AÇIK MAVİ LOGO */
+.logo{
+    font-size:18px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+nav ul li{
+    margin-left:15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:10px;
+}
+
+.container{
+    max-width:700px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:12px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#38bdf8;
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.whatsapp{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    padding:12px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li{
+        margin: 5px 0;
+    }
+
+    .header h1{
+        font-size: 22px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .btn{
+        display:block;
+        margin:8px 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+     <div class=> Marmaris Merkez Camileri Derneği</div>
+    
+    <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+         <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletişim.html">İletişim</a></li>
+         <li><a href="bilgi.html">İlçe Bilgi ve Hava Durumu</a></li>
+         <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+    </ul>
+</nav>
+<div class="header">
+<div class="container">
+<div class="card">
+
+<h1>💼 Reklam & Sponsor Başvuru</h1>
+<p>Reklam vermek veya sponsor olmak için bilgilerinizi girin</p>
+
+<form onsubmit="gonder(event)">
+
+<input type="text" id="isim" placeholder="Ad Soyad / Firma Adı" required>
+
+<input type="text" id="telefon" placeholder="Telefon" required>
+
+<input type="text" id="dukkan" placeholder="Dükkan / İşletme Adı">
+
+<input type="text" id="adres" placeholder="Adres">
+
+<input type="text" id="website" placeholder="Web Sitesi (varsa)">
+
+<input type="text" id="instagram" placeholder="Instagram (varsa)">
+
+<textarea id="mesaj" placeholder="Reklam detayını yazın..." required></textarea>
+
+<button type="submit">Başvuru Gönder</button>
+
+</form>
+
+<a id="waBtn" class="whatsapp" target="_blank">
+📱 WhatsApp'tan Yaz
+</a>
+
+</div>
+</div>
+
+<script>
+function gonder(e){
+    e.preventDefault();
+
+    let isim = document.getElementById("isim").value;
+    let tel = document.getElementById("telefon").value;
+    let dukkan = document.getElementById("dukkan").value;
+    let adres = document.getElementById("adres").value;
+    let web = document.getElementById("website").value;
+    let insta = document.getElementById("instagram").value;
+    let mesaj = document.getElementById("mesaj").value;
+
+    let text =
+    "📢 REKLAM BAŞVURUSU %0A%0A" +
+    "👤 İsim: " + isim + "%0A" +
+    "📞 Telefon: " + tel + "%0A" +
+    "🏪 İşletme: " + dukkan + "%0A" +
+    "📍 Adres: " + adres + "%0A" +
+    "🌐 Web: " + web + "%0A" +
+    "📷 Instagram: " + insta + "%0A%0A" +
+    "📝 Mesaj: " + mesaj;
+
+    let numara = "905345157363"; // BURAYI DEĞİŞTİR
+
+    window.open("https://wa.me/" + numara + "?text=" + text);
+}
+
+// Direkt WhatsApp butonu
+document.getElementById("waBtn").href =
+"https://wa.me/905312345678?text=Merhaba%20reklam%20vermek%20istiyorum";
+</script>
+
+</body>
+</html>

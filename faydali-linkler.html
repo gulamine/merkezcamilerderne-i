@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faydalı Linkler</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-weight:bold;
+    color:#38bdf8;
+    font-size:18px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    padding:0;
+}
+
+nav ul li{
+    margin-left:15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.card h1{
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+/* LINK ITEM */
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+    margin-bottom:10px;
+    border-bottom:1px solid #eee;
+}
+
+.item span{
+    color:#333;
+}
+
+.item a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.item a:hover{
+    text-decoration:underline;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+/* 📱 MOBILE */
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav ul{
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul li{
+        margin:5px 0;
+    }
+
+    .item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">🕌 Marmaris Camileri</div>
+
+    <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletişim.html">İletişim</a></li>
+         <li><a href="bilgi.html">İlçe Bilgi ve Hava Durumu</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENT -->
+<div class="container">
+<div class="card">
+
+<h1>🔗 Faydalı Linkler</h1>
+
+<div class="item">
+    <span>🌐 Diyanet</span>
+    <a href="https://www.diyanet.gov.tr" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>📍 Marmaris Müftülük</span>
+    <a href="https://mugla.diyanet.gov.tr/marmaris" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>🏛 Kaymakamlık</span>
+    <a href="https://www.marmaris.gov.tr/" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>📚 Milli Eğitim</span>
+    <a href="https://marmaris.meb.gov.tr/" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>📝 CİMER</span>
+    <a href="https://www.cimer.gov.tr/" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>🚓 Emniyet</span>
+    <a href="https://www.marmaris.gov.tr" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>🪖 Jandarma</span>
+    <a href="https://www.marmaris.gov.tr" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>🏥 Hastane</span>
+    <a href="https://marmarisdh.saglik.gov.tr/" target="_blank">Site</a>
+</div>
+
+<div class="item">
+    <span>📷 Instagram (Dernek)</span>
+    <a href="https://instagram.com/merkezcamileri" target="_blank">Aç</a>
+</div>
+
+<div class="item">
+    <span>📺 YouTube</span>
+    <a href="https://youtube.com/" target="_blank">Aç</a>
+</div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Marmaris Merkez Camileri Derneği
+</footer>
+
+</body>
+</html>

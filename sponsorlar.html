@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorlarımız</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    flex-wrap:wrap;
+    padding:0;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:30px;
+}
+
+.header h1{
+    color:#0f172a;
+}
+
+/* GRID */
+.container{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#0f172a;
+}
+
+.card p{
+    color:#555;
+    font-size:14px;
+    margin:10px 0;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:8px 12px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    margin:5px;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li{
+        margin: 5px 0;
+    }
+
+    .header h1{
+        font-size: 22px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .btn{
+        display:block;
+        margin:8px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">🕌 Marmaris Camileri</div>
+
+    <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletişim.html">İletişim</a></li>
+        <li><a href="bilgi.html">İlçe Bilgi</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>🤝 Sponsorlarımız</h1>
+    <p>Bize destek olan değerli işletmeler</p>
+</div>
+
+<!-- SPONSORLAR -->
+<div class="container">
+
+    <div class="card">
+        <h3>Dal Kardeşler</h3>
+        <p>📍 Kebap</p>
+        <a href="https://instagram.com/dalkebap" target="_blank" class="btn">
+            Instagram
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Mabel Emlak</h3>
+        <p>📍 Marmaris</p>
+        <a href="https://mabelmarmaris.com" target="_blank" class="btn">
+            Web Sitesi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Barış Kaba</h3>
+        <p>📍 Ankara</p>
+
+        <a href="https://instagram.com/bariskaba06
+" target="_blank" class="btn">
+            Instagram
+        </a>
+
+        <a href="https://siteadi.com" target="_blank" class="btn">
+            Web Sitesi
+        </a>
+    </div>
+    <div class="card">
+        <h3>PitaLand</h3>
+        <p> canada</p>
+
+        <a href="https://instagram.com/pitaland.ca
+" target="_blank" class="btn">
+            Instagram
+        </a>
+
+        <a href="https://pitaland.ca/" target="_blank" class="btn">
+            Web Sitesi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Ali Bakkal</h3>
+        <p>📍 Armutalan</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Marmaris Camileri
+</footer>
+
+</body>
+</html>

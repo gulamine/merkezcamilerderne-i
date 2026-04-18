@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    margin:0;
+}
+
+/* CONTAINER */
+.container{
+    max-width:800px;
+    margin:30px auto;
+    background:#111827;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* INPUT */
+input{
+    padding:12px;
+    margin:5px 0;
+    width:100%;
+    border:none;
+    border-radius:5px;
+    outline:none;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#38bdf8;
+    border:none;
+    border-radius:5px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CARD */
+.card{
+    background:#1f2937;
+    padding:12px;
+    margin-top:10px;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+small{
+    color:#aaa;
+}
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li{
+        margin: 5px 0;
+    }
+
+    .header h1{
+        font-size: 22px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .btn{
+        display:block;
+        margin:8px 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🛠 Admin Panel</h2>
+
+<input type="text" id="isim" placeholder="Cami adı">
+<input type="text" id="konum" placeholder="Bölge / Mahalle">
+
+<button onclick="ekle()">➕ Cami Ekle</button>
+
+<h3>📍 Eklenen Camiler</h3>
+<div id="liste"></div>
+
+</div>
+
+<script>
+
+// VERİ
+let camiler = JSON.parse(localStorage.getItem("camiler")) || [];
+
+// EKLE
+function ekle(){
+    let isim = document.getElementById("isim").value.trim();
+    let konum = document.getElementById("konum").value.trim();
+
+    if(!isim || !konum){
+        alert("Boş bırakma!");
+        return;
+    }
+
+    camiler.push({isim, konum});
+    localStorage.setItem("camiler", JSON.stringify(camiler));
+
+    document.getElementById("isim").value = "";
+    document.getElementById("konum").value = "";
+
+    listele();
+}
+
+// SİL
+function sil(index){
+    camiler.splice(index,1);
+    localStorage.setItem("camiler", JSON.stringify(camiler));
+    listele();
+}
+
+// LİSTELE
+function listele(){
+    let html = "";
+
+    if(camiler.length === 0){
+        html = "<p>Henüz cami eklenmedi</p>";
+    } else {
+        camiler.forEach((cami, i) => {
+            html += `
+            <div class="card">
+                <div>
+                    <b>${cami.isim}</b><br>
+                    <small>${cami.konum}</small>
+                </div>
+                <button onclick="sil(${i})">Sil</button>
+            </div>
+            `;
+        });
+    }
+
+    document.getElementById("liste").innerHTML = html;
+}
+
+listele();
+
+</script>
+
+</body>
+</html>
