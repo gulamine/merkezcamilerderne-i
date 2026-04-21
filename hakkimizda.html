@@ -1,172 +1,447 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hakkımızda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marmaris Merkez Camileri Derneği hakkında bilgi">
+    <meta name="theme-color" content="#0f172a">
+    <title>Hakkımızda - Marmaris Merkez Camileri Derneği</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
 
-body{
-    background:#f5f5f5;
-}
+        /* NAVBAR */
+        nav {
+            background: #0f172a;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-/* NAVBAR */
-nav{
-    background:#0f172a;
-    color:white;
-    padding:15px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
 
-.logo{
-    font-size:20px;
-    font-weight:bold;
-    color:#38bdf8;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-nav ul{
-    display:flex;
-    list-style:none;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
 
-nav ul li{
-    margin-left:20px;
-}
+        nav ul li a:hover {
+            background: #38bdf8;
+            transform: translateY(-2px);
+        }
 
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-}
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-/* İÇERİK */
-.container{
-    padding:40px;
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-}
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
 
-.container h1{
-    margin-bottom:20px;
-    color:#1875a7;
-}
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
 
-.container p{
-    margin-bottom:15px;
-    color:#444;
-    line-height:1.6;
-}
+        /* CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-/* FOOTER */
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:30px;
-}
-/* 📱 MOBILE */
-@media (max-width: 768px) {
+        /* CONTENT BOX */
+        .content-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
 
-    nav{
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        .content-box h2 {
+            color: #0f172a;
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    nav ul{
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
+        .content-box p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
 
-    nav ul li{
-        margin: 5px 0;
-    }
+        .content-box ul {
+            margin-left: 25px;
+            color: #555;
+            line-height: 1.8;
+        }
 
-    .header h1{
-        font-size: 22px;
-    }
+        .content-box ul li {
+            margin-bottom: 10px;
+        }
 
-    .container{
-        grid-template-columns: 1fr;
-    }
+        /* STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
 
-    .btn{
-        display:block;
-        margin:8px 0;
-    }
-}
-</style>
+        .stat-card {
+            background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* VALUES GRID */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .value-card {
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .value-card h3 {
+            color: #0f172a;
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .value-card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #38bdf8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .cta-btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .content-box {
+                padding: 25px;
+            }
+
+            .stats-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-      <div class="logo">🕌 Marmaris Camileri</div>
-
-    <ul>
-        <li><a href="index.html">Ana Sayfa</a></li>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo"> Marmaris Merkez Camileri Derneği</div>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
         <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
         <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
         <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="iletişim.html">İletişim</a></li>
-         <li><a href="bilgi.html">İlçe Bilgi ve Hava Durumu</a></li>
-         <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="bilgi.html">İlçe Bilgi</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
         <li><a href="sponsorlar.html">Sponsorlar</a></li>
     </ul>
-</nav>
+    </nav>
 
-<!-- İÇERİK -->
-<div class="container">
-    <h1>Hakkımızda</h1>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>ℹ️ Hakkımızda</h1>
+        <p>Marmaris Merkez Camileri Derneği</p>
+    </div>
 
-    <p>
-        Marmaris Merkez Camileri Derneği, 28 Şubat 2025 tarihinde kurulmuştur. </p>
-           <p> Derneğimiz yalnızca camilerin bakım ve onarımıyla sınırlı kalmayıp,</p>
-          <p> toplumun her kesimine hitap eden sosyal, kültürel ve manevi faaliyetler gerçekleştirmeyi amaçlamaktadır. </p>
-            <p>Camilerimizi sadece ibadet edilen mekânlar değil; birlik, paylaşma, kardeşlik ve eğitim merkezleri haline getirmek temel hedeflerimizdendir.</p> 
-              <p>Bu doğrultuda gençlerden çocuklara, ailelerden ihtiyaç sahiplerine kadar geniş bir kitleye yönelik çeşitli programlar düzenlenmektedir.</p> 
-                <p>Derneğimiz, dayanışmayı güçlendiren, gençleri cami ve değerleriyle buluşturan, paylaşma ve yardımlaşma kültürünü yaygınlaştıran faaliyetlerine gönüllülerimizin ve hayırseverlerin desteğiyle devam etmektedir.</p>
-    </p>
+    <!-- CONTAINER -->
+    <div class="container">
 
-    
-      
-        <h1 class="font-amiri text-2xl font-bold mb-6">Misyonumuz</h1>
-        
-         
-      
-           <p>Camilerin bakım ve onarımını sağlamak </p>
-         
-          
-         <p>Dini eğitim faaliyetlerini desteklemek </p>
-         
-          
-            <p>Toplumsal dayanışmayı güçlendirmek </p>
-        
-            <p>Hayır işlerini koordine etmek </p>
-    
-       </div>
+        <!-- BİZ KİMİZ -->
+        <div class="content-box">
+            <h2>🕌 Biz Kimiz?</h2>
+            <p>
+                <strong>Marmaris Merkez Camileri Derneği</strong>, Marmaris ve çevresindeki camilerin 
+                yönetimi, bakımı ve geliştirilmesi amacıyla kurulmuş bir sivil toplum kuruluşudur.
+            </p>
+            <p>
+                2025 yılında kurulan derneğimiz, Marmaris'teki 15'ten fazla camiyi bünyesinde barındırmakta 
+                ve bölgedeki Müslüman cemaatin dini, sosyal ve kültürel ihtiyaçlarına hizmet etmektedir.
+            </p>
+            <p>
+                Camilerimizin modern ve temiz ibadet mekanları olarak hizmet vermesini sağlamak, 
+                dini eğitim programları düzenlemek ve topluma faydalı projeler geliştirmek temel 
+                hedeflerimiz arasındadır.
+            </p>
+        </div>
 
-    
-</div>
+        <!-- MİSYON VİZYON -->
+        <div class="content-box">
+            <h2>🎯 Misyon ve Vizyonumuz</h2>
+            
+            <h3 style="color: #0f172a; margin-top: 20px; margin-bottom: 10px;">📍 Misyonumuz</h3>
+            <p>
+                Marmaris ve çevresindeki camileri en iyi şekilde yönetmek, bakımını yapmak ve 
+                cemaatimize kaliteli dini hizmetler sunmak. Toplumun manevi gelişimine katkı 
+                sağlamak ve İslami değerleri yaşatmak.
+            </p>
 
-<!-- FOOTER -->
-<footer>
-    © 2026 Marmaris Merkez Camileri Derneği
-</footer>
+            <h3 style="color: #0f172a; margin-top: 20px; margin-bottom: 10px;">🌟 Vizyonumuz</h3>
+            <p>
+                Türkiye'nin en örnek cami yönetim derneklerinden biri olmak. Modern, temiz ve 
+                huzurlu ibadet mekanları sunarak, toplumun manevi ihtiyaçlarına en iyi şekilde 
+                cevap veren bir kuruluş olmak.
+            </p>
+        </div>
+
+        <!-- DEĞERLERİMİZ -->
+        <div class="content-box">
+            <h2>💎 Değerlerimiz</h2>
+            <div class="values-grid">
+                
+                <div class="value-card">
+                    <h3>🤝 Güven</h3>
+                    <p>Şeffaf ve hesap verebilir bir yönetim anlayışıyla hareket ederiz.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>❤️ Sevgi</h3>
+                    <p>Cemaatimize sevgi ve saygıyla hizmet ederiz.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>🎓 Eğitim</h3>
+                    <p>Dini eğitim ve öğretime önem veririz.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>🌱 Gelişim</h3>
+                    <p>Sürekli gelişim ve iyileştirme anlayışıyla çalışırız.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>🤲 Yardımlaşma</h3>
+                    <p>Toplumsal dayanışma ve yardımlaşmayı destekleriz.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>🌍 Evrensellik</h3>
+                    <p>İslam'ın evrensel değerlerini yaşatırız.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- HİZMETLERİMİZ -->
+        <div class="content-box">
+            <h2>🌟 Hizmetlerimiz</h2>
+            <ul>
+                <li><strong>Cami Yönetimi:</strong> 15+ caminin profesyonel yönetimi ve bakımı</li>
+                <li><strong>Dini Eğitim:</strong> Kur'an kursları, hafızlık programları ve dini eğitim seminerleri</li>
+                <li><strong>Sosyal Etkinlikler:</strong> Sohbet programları, konferanslar ve toplantılar</li>
+                <li><strong>Gençlik Programları:</strong> Gençlere yönelik özel eğitim ve sosyal aktiviteler</li>
+                <li><strong>Sosyal Yardım:</strong> İhtiyaç sahiplerine yönelik yardım kampanyaları</li>
+                <li><strong>Aile Danışmanlığı:</strong> Aile içi sorunlara yönelik rehberlik hizmetleri</li>
+                <li><strong>Ramazan Programları:</strong> İftar, teravih ve özel Ramazan etkinlikleri</li>
+                <li><strong>Kurban Organizasyonu:</strong> Kurban kesimi ve dağıtım hizmetleri</li>
+            </ul>
+        </div>
+
+        <!-- İSTATİSTİKLER -->
+        <div class="content-box">
+            <h2>📊 Rakamlarla Biz</h2>
+            <div class="stats-grid">
+                
+                <div class="stat-card">
+                    <h3>15+</h3>
+                    <p>Cami</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>50+</h3>
+                    <p>Yıllık Etkinlik</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>1000+</h3>
+                    <p>Cemaat Üyesi</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>2025</h3>
+                    <p>Kuruluş Yılı</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h2>🤝 Bize Katılın!</h2>
+            <p>
+                Camilerimize ve topluma hizmet etmek, projelerimize destek olmak veya 
+                gönüllü olarak çalışmak için bizimle iletişime geçin.
+            </p>
+            <a href="iletisim.html" class="cta-btn">İletişime Geç</a>
+            <a href="reklam.html" class="cta-btn">Sponsor Ol</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Marmaris Merkez Camileri Derneği</strong></p>
+        <p>📧 <a href="mailto:info@marmarismerkezcamileri.com">info@marmarismerkezcamileri.com</a></p>
+        <p>📱 <a href="tel:+905345157363">+90 534 515 73 63</a></p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2026 Marmaris Merkez Camileri Derneği</p>
+    </footer>
 
 </body>
 </html>

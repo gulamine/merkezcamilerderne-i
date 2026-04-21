@@ -1,191 +1,423 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ezan Vakitleri</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marmaris Namaz Vakitleri - Güncel ezan saatleri">
+    <meta name="theme-color" content="#0f172a">
+    <title>Ezan Vakitleri - Marmaris Merkez Camileri</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
 
-body{
-    background:#f5f5f5;
-}
+        /* NAVBAR */
+        nav {
+            background: #0f172a;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-/* NAVBAR */
-nav{
-    background:#0f172a;
-    color:white;
-    padding:15px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
 
-.logo{
-    font-size:20px;
-    font-weight:bold;
-    color:#38bdf8;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-nav ul{
-    display:flex;
-    list-style:none;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
 
-nav ul li{
-    margin-left:20px;
-}
+        nav ul li a:hover {
+            background: #38bdf8;
+            transform: translateY(-2px);
+        }
 
-nav ul li a{
-    color:white;
-    text-decoration:none;
-}
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-/* BAŞLIK */
-.header{
-    text-align:center;
-    padding:30px;
-}
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
 
-.header h1{
-    color:#0f172a;
-}
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
 
-/* TABLO */
-.table-container{
-    display:flex;
-    justify-content:center;
-    padding:20px;
-}
+        /* CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-table{
-    width:90%;
-    max-width:600px;
-    border-collapse:collapse;
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-}
+        /* DATE INFO */
+        .date-info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-th, td{
-    padding:12px;
-    text-align:center;
-}
+        .date-info h2 {
+            color: #0f172a;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
 
-th{
-    background:#0f172a;
-    color:white;
-}
+        .date-info p {
+            color: #666;
+            font-size: 16px;
+        }
 
-tr:nth-child(even){
-    background:#f0f0f0;
-}
+        /* PRAYER TIMES */
+        .prayer-times {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
 
-/* LOADING */
-.loading{
-    text-align:center;
-    margin-top:20px;
-}
-/* 📱 MOBILE */
-@media (max-width: 768px) {
+        .prayer-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid #38bdf8;
+        }
 
-    nav{
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        .prayer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
 
-    nav ul{
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
+        .prayer-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
 
-    nav ul li{
-        margin: 5px 0;
-    }
+        .prayer-name {
+            color: #0f172a;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-    .header h1{
-        font-size: 22px;
-    }
+        .prayer-time {
+            color: #38bdf8;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-    .container{
-        grid-template-columns: 1fr;
-    }
+        /* LOADING */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 18px;
+        }
 
-    .btn{
-        display:block;
-        margin:8px 0;
-    }
-}
-</style>
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #38bdf8;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ERROR */
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* INFO BOX */
+        .info-box {
+            background: #e0f2fe;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #38bdf8;
+            margin-top: 30px;
+        }
+
+        .info-box h3 {
+            color: #0f172a;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .prayer-times {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-    <div class="logo">🕌 Marmaris Camileri</div>
-    <ul>
-        <li><a href="index.html">Ana Sayfa</a></li>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">🕌 Marmaris Camileri</div>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
         <li><a href="ezan.html">Ezan Vakitleri</a></li>
-         <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="faydali-dini-linkler.html">Faydali-dini-linkler</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
         <li><a href="hakkimizda.html">Hakkımızda</a></li>
-         <li><a href="iletişim.html">İletişim</a></li>
+        <li><a href="iletişim.html">İletişim</a></li>
          <li><a href="bilgi.html">İlçe Bilgi ve Hava Durumu</a></li>
          <li><a href="reklam.html">Reklam</a></li>
         <li><a href="sponsorlar.html">Sponsorlar</a></li>
     </ul>
-</nav>
+  </nav>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🕌 Namaz Vakitleri</h1>
+        <p>Marmaris için güncel ezan saatleri</p>
+    </div>
 
-<div class="header">
-    <h1>Ezan Vakitleri (Marmaris)</h1>
-</div>
+    <!-- CONTAINER -->
+    <div class="container">
 
-<div class="loading" id="loading">Yükleniyor...</div>
+        <!-- LOADING -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Namaz vakitleri yükleniyor...</p>
+        </div>
 
-<div class="table-container" style="display:none;" id="tableBox">
-<table>
-    <tr>
-        <th>Vakit</th>
-        <th>Saat</th>
-    </tr>
-    <tr><td>İmsak</td><td id="imsak"></td></tr>
-    <tr><td>Güneş</td><td id="gunes"></td></tr>
-    <tr><td>Öğle</td><td id="ogle"></td></tr>
-    <tr><td>İkindi</td><td id="ikindi"></td></tr>
-    <tr><td>Akşam</td><td id="aksam"></td></tr>
-    <tr><td>Yatsı</td><td id="yatsi"></td></tr>
-</table>
-</div>
+        <!-- DATE INFO -->
+        <div id="dateInfo" class="date-info" style="display: none;">
+            <h2 id="currentDate">-</h2>
+            <p id="hijriDate">-</p>
+        </div>
 
-<script>
-// API'den veri çekme
-fetch("https://api.aladhan.com/v1/timingsByCity?city=Marmaris&country=Turkey&method=13")
-.then(res => res.json())
-.then(data => {
-    let v = data.data.timings;
+        <!-- PRAYER TIMES -->
+        <div id="prayerTimes" class="prayer-times" style="display: none;">
+            
+            <div class="prayer-card">
+                <div class="prayer-icon">🌅</div>
+                <div class="prayer-name">İmsak</div>
+                <div class="prayer-time" id="imsak">--:--</div>
+            </div>
 
-    document.getElementById("imsak").innerText = v.Fajr;
-    document.getElementById("gunes").innerText = v.Sunrise;
-    document.getElementById("ogle").innerText = v.Dhuhr;
-    document.getElementById("ikindi").innerText = v.Asr;
-    document.getElementById("aksam").innerText = v.Maghrib;
-    document.getElementById("yatsi").innerText = v.Isha;
+            <div class="prayer-card">
+                <div class="prayer-icon">☀️</div>
+                <div class="prayer-name">Güneş</div>
+                <div class="prayer-time" id="gunes">--:--</div>
+            </div>
 
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("tableBox").style.display = "flex";
-})
-.catch(() => {
-    document.getElementById("loading").innerText = "Veri alınamadı!";
-});
-</script>
+            <div class="prayer-card">
+                <div class="prayer-icon">🌞</div>
+                <div class="prayer-name">Öğle</div>
+                <div class="prayer-time" id="ogle">--:--</div>
+            </div>
+
+            <div class="prayer-card">
+                <div class="prayer-icon">🌤️</div>
+                <div class="prayer-name">İkindi</div>
+                <div class="prayer-time" id="ikindi">--:--</div>
+            </div>
+
+            <div class="prayer-card">
+                <div class="prayer-icon">🌆</div>
+                <div class="prayer-name">Akşam</div>
+                <div class="prayer-time" id="aksam">--:--</div>
+            </div>
+
+            <div class="prayer-card">
+                <div class="prayer-icon">🌙</div>
+                <div class="prayer-name">Yatsı</div>
+                <div class="prayer-time" id="yatsi">--:--</div>
+            </div>
+
+        </div>
+
+        <!-- INFO BOX -->
+        <div class="info-box">
+            <h3>ℹ️ Bilgilendirme</h3>
+            <p>
+                Namaz vakitleri <strong>Marmaris/Muğla</strong> için gösterilmektedir. 
+                Vakitler Diyanet İşleri Başkanlığı verilerine göre otomatik olarak güncellenmektedir.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Marmaris Merkez Camileri Derneği</strong></p>
+        <p>📧 <a href="mailto:info@marmarismerkezcamileri.com">info@marmarismerkezcamileri.com</a></p>
+        <p>📱 <a href="tel:+905345157363">+90 534 515 73 63</a></p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2026 Marmaris Merkez Camileri Derneği</p>
+    </footer>
+
+    <!-- JAVASCRIPT - API CALL -->
+    <script>
+        // Marmaris koordinatları
+        const LATITUDE = 36.8547;
+        const LONGITUDE = 28.2742;
+
+        // API'den namaz vakitlerini çek
+        async function getPrayerTimes() {
+            try {
+                const today = new Date();
+                const day = today.getDate();
+                const month = today.getMonth() + 1;
+                const year = today.getFullYear();
+
+                // Aladhan API
+                const url = `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${LATITUDE}&longitude=${LONGITUDE}&method=13`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.code === 200) {
+                    const timings = data.data.timings;
+                    const date = data.data.date;
+
+                    // Tarihleri göster
+                    document.getElementById('currentDate').textContent = 
+                        `${day} ${getMonthName(month)} ${year}`;
+                    document.getElementById('hijriDate').textContent = 
+                        `${date.hijri.day} ${date.hijri.month.tr} ${date.hijri.year}`;
+
+                    // Namaz vakitlerini göster
+                    document.getElementById('imsak').textContent = timings.Imsak;
+                    document.getElementById('gunes').textContent = timings.Sunrise;
+                    document.getElementById('ogle').textContent = timings.Dhuhr;
+                    document.getElementById('ikindi').textContent = timings.Asr;
+                    document.getElementById('aksam').textContent = timings.Maghrib;
+                    document.getElementById('yatsi').textContent = timings.Isha;
+
+                    // Loading'i gizle, içeriği göster
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('dateInfo').style.display = 'block';
+                    document.getElementById('prayerTimes').style.display = 'grid';
+                } else {
+                    throw new Error('API hatası');
+                }
+            } catch (error) {
+                console.error('Hata:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <h3>⚠️ Hata</h3>
+                        <p>Namaz vakitleri yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Ay isimlerini Türkçe'ye çevir
+        function getMonthName(month) {
+            const months = [
+                'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+                'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+            ];
+            return months[month - 1];
+        }
+
+        // Sayfa yüklendiğinde vakitleri çek
+        window.addEventListener('load', getPrayerTimes);
+    </script>
 
 </body>
 </html>

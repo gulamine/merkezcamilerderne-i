@@ -8,6 +8,7 @@ const filesToCache = [
   "reklam.html",
   "faydalı-linkler.html",
   "iletişim.html",
+  "faydali-dini-linkler.html",
   "sponsorlar.html",
 
   "hakkimizda.html"
