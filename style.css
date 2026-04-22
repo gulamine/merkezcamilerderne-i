@@ -1,0 +1,86 @@
+/* NAVBAR */
+nav{
+    background:#0f172a;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+/* LOGO */
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+/* MENU */
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:8px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:6px;
+    transition:0.3s;
+    font-size:14px;
+}
+
+/* HOVER */
+nav ul li a:hover{
+    background:#38bdf8;
+    transform:scale(1.05);
+}
+
+/* AKTİF SAYFA */
+nav ul li a.active{
+    background:#38bdf8;
+}
+
+/* MENU ICON */
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+        background:#0f172a;
+        padding:10px 0;
+        border-radius:10px;
+    }
+
+    nav ul li{
+        text-align:center;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:12px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}

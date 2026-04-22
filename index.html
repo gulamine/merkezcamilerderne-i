@@ -7,6 +7,7 @@
 
 <link rel="manifest" href="manifest.json">
 
+
 <style>
 *{
     margin:0;
@@ -239,6 +240,30 @@ footer{
         gap: 20px;
     }
 }
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
 </style>
 </head>
 
@@ -246,9 +271,11 @@ footer{
 
 <!-- NAVBAR -->
 <nav>
-    <div class="logo">🕌 Marmaris Merkez Camileri</div>
+    <div class="logo"> Marmaris Camileri</div>
 
-    <ul>
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
@@ -261,12 +288,13 @@ footer{
         <li><a href="reklam.html">Reklam</a></li>
         <li><a href="sponsorlar.html">Sponsorlar</a></li>
     </ul>
+
 </nav>
 
 <!-- HERO -->
 <div class="hero">
     <div>
-        <h1>🕌 Marmaris Merkez Camileri Derneği</h1>
+        <h1>Marmaris Merkez Camileri Derneği</h1>
         <p>Camilerimiz, etkinliklerimiz ve hizmetlerimiz</p>
         <a href="camiler.html" class="btn">Camileri Keşfet</a>
     </div>
@@ -368,6 +396,12 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js")
         .then(reg => console.log('Service Worker kayıtlı', reg))
         .catch(err => console.log('Service Worker hatası', err));
+}
+
+</script>
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
 }
 </script>
 

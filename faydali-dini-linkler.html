@@ -1,213 +1,76 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marmaris Merkez Camileri - Faydalı linkler ve kaynaklar">
-    <meta name="theme-color" content="#0f172a">
-    <title>faydali-dini-linller</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="icon.png" type="image/png">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faydalı Dini Linkler</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#f5f5f5;}
 
-        /* NAVBAR */
-        nav {
-            background: #0f172a;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+nav{
+background:#0f172a;color:white;padding:15px;
+display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+}
+.logo{color:#38bdf8;font-weight:bold;}
+.menu-toggle{display:none;font-size:28px;cursor:pointer;}
 
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #38bdf8;
-        }
+nav ul{display:flex;list-style:none;gap:10px;}
+nav ul li a{color:white;text-decoration:none;padding:8px;border-radius:6px;}
+nav ul li a:hover{background:#38bdf8;}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.header{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;text-align:center;padding:60px 20px;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
+.container{max-width:1200px;margin:40px auto;padding:20px;}
 
-        nav ul li a:hover {
-            background: #38bdf8;
-            transform: translateY(-2px);
-        }
+.category{margin-bottom:40px;}
+.category-title{
+background:white;padding:15px;border-radius:10px;margin-bottom:15px;
+border-left:5px solid #38bdf8;
+}
 
-        /* HEADER */
-        .header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
+.links-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-        .header h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+.link-card{
+background:white;padding:20px;border-radius:12px;
+display:flex;gap:12px;align-items:center;
+text-decoration:none;color:inherit;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:.3s;
+}
+.link-card:hover{transform:translateY(-5px);}
 
-        .header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
+.link-icon{font-size:30px;}
 
-        /* CONTAINER */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+footer{
+background:#0f172a;color:white;text-align:center;
+padding:20px;margin-top:50px;
+}
 
-        /* CATEGORY */
-        .category {
-            margin-bottom: 40px;
-        }
-
-        .category-title {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            border-left: 5px solid #38bdf8;
-        }
-
-        .category-title h2 {
-            color: #0f172a;
-            font-size: 28px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* LINKS GRID */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        /* LINK CARD */
-        .link-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border-left: 5px solid #38bdf8;
-        }
-
-        .link-icon {
-            font-size: 40px;
-            flex-shrink: 0;
-        }
-
-        .link-content h3 {
-            color: #0f172a;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .link-content p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                margin-top: 15px;
-            }
-
-            nav ul li a {
-                display: block;
-                width: 100%;
-            }
-
-            .header h1 {
-                font-size: 28px;
-            }
-
-            .links-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+@media(max-width:768px){
+.menu-toggle{display:block;}
+nav ul{display:none;flex-direction:column;width:100%;}
+nav ul.active{display:flex;}
+}
+</style>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">🕌 Marmaris Merkez Camileri Derneği</div>
-        <ul>
-          <li><a href="index.html">Ana Sayfa</a></li>
+<nav>
+<div class="logo">🕌 Marmaris Camileri</div>
+<div class="menu-toggle" onclick="menu()">☰</div>
+
+<ul id="menu">
+<li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
         <li><a href="ezan.html">Ezan Vakitleri</a></li>
@@ -218,195 +81,165 @@
         <li><a href="bilgi.html">İlçe Bilgi</a></li>
         <li><a href="reklam.html">Reklam</a></li>
         <li><a href="sponsorlar.html">Sponsorlar</a></li>
-    </ul>
-    </nav>
+</ul>
+</nav>
 
-    <!-- HEADER -->
-    <div class="header">
-        <h1>🔗 faydalı-dini-Linkler </h1>
-        <p>Dini kaynaklar ve faydalı web siteleri</p>
-    </div>
+<div class="header">
+<h1>📖 Faydalı Dini Linkler</h1>
+<p>Kur’an öğrenme, meal, dinleme ve dini kaynaklar</p>
+</div>
 
-    <!-- CONTAINER -->
-    <div class="container">
+<div class="container">
 
-        <!-- CATEGORY 1: RESMİ KURUMLAR -->
-        <div class="category">
-            <div class="category-title">
-                <h2>🏛️ Resmi Kurumlar</h2>
-            </div>
-            <div class="links-grid">
+<!-- ELİF BA -->
+<div class="category">
+<div class="category-title"><h2>🧠 Kur’an Öğrenme (Elif-Ba)</h2></div>
+<div class="links-grid">
+<a href="https://kuran.diyanet.gov.tr/elifba" target="_blank" class="link-card">
+<div class="link-icon">📖</div>
+<div><h3>Diyanet Elif-Ba</h3></div>
+</a>
+</div>
+</div>
 
-                <a href="https://www.diyanet.gov.tr" target="_blank" class="link-card">
-                    <div class="link-icon">🕌</div>
-                    <div class="link-content">
-                        <h3>Diyanet İşleri Başkanlığı</h3>
-                        <p>Resmi dini kurum web sitesi</p>
-                    </div>
-                </a>
+<!-- MEAL -->
+<div class="category">
+<div class="category-title"><h2>📖 Kur’an Meal & Tefsir</h2></div>
+<div class="links-grid">
 
-                <a href="https://kuran.diyanet.gov.tr" target="_blank" class="link-card">
-                    <div class="link-icon">📖</div>
-                    <div class="link-content">
-                        <h3>Kur'an-ı Kerim</h3>
-                        <p>Meal ve tefsir ile Kur'an okuma</p>
-                    </div>
-                </a>
+<a href="https://kuran.diyanet.gov.tr/mushaf" target="_blank" class="link-card">
+<div class="link-icon">📘</div>
+<div><h3>Diyanet Meal</h3></div>
+</a>
 
-                <a href="https://hadis.diyanet.gov.tr" target="_blank" class="link-card">
-                    <div class="link-icon">📚</div>
-                    <div class="link-content">
-                        <h3>Hadis Ansiklopedisi</h3>
-                        <p>Hadis-i şerifler ve açıklamaları</p>
-                    </div>
-                </a>
+<a href="https://quran.com/tr" target="_blank" class="link-card">
+<div class="link-icon">🌍</div>
+<div><h3>Quran.com Türkçe</h3></div>
+</a>
 
-                <a href="https://www.diyanet.gov.tr/tr-TR/Kurumsal/Detay/29/diyanet-isleri-baskanligi-din-hizmetleri-genel-mudurlugu" target="_blank" class="link-card">
-                    <div class="link-icon">🕐</div>
-                    <div class="link-content">
-                        <h3>Namaz Vakitleri</h3>
-                        <p>Tüm Türkiye için namaz vakitleri</p>
-                    </div>
-                </a>
+<a href="https://www.kuranmeali.com" target="_blank" class="link-card">
+<div class="link-icon">📚</div>
+<div><h3>KuranMeali.com</h3></div>
+</a>
 
-            </div>
-        </div>
+</div>
+</div>
 
-        <!-- CATEGORY 2: EĞİTİM VE ÖĞRENME -->
-        <div class="category">
-            <div class="category-title">
-                <h2>📚 Eğitim ve Öğrenme</h2>
-            </div>
-            <div class="links-grid">
+<!-- DİNLE -->
+<div class="category">
+<div class="category-title"><h2>🎧 Kur’an Dinle</h2></div>
+<div class="links-grid">
 
-                <a href="https://www.islamveihsan.com" target="_blank" class="link-card">
-                    <div class="link-icon">🎓</div>
-                    <div class="link-content">
-                        <h3>İslam ve İhsan</h3>
-                        <p>Dini eğitim ve makaleler</p>
-                    </div>
-                </a>
+<a href="https://quran.com" target="_blank" class="link-card">
+<div class="link-icon">🎧</div>
+<div><h3>Quran.com</h3></div>
+</a>
 
-                <a href="https://sorularlaislamiyet.com" target="_blank" class="link-card">
-                    <div class="link-icon">❓</div>
-                    <div class="link-content">
-                        <h3>Sorularla İslamiyet</h3>
-                        <p>Dini sorular ve cevaplar</p>
-                    </div>
-                </a>
+<a href="https://mp3quran.net" target="_blank" class="link-card">
+<div class="link-icon">📻</div>
+<div><h3>MP3 Quran</h3></div>
+</a>
 
-                <a href="https://www.dinimizislam.com" target="_blank" class="link-card">
-                    <div class="link-icon">📝</div>
-                    <div class="link-content">
-                        <h3>Dinimiz İslam</h3>
-                        <p>İslami bilgiler ve makaleler</p>
-                    </div>
-                </a>
+<a href="https://www.youtube.com/results?search_query=abdul+basit+quran" target="_blank" class="link-card">
+<div class="link-icon">▶️</div>
+<div><h3>Abdul Basit</h3></div>
+</a>
 
-                <a href="https://www.ihya.org" target="_blank" class="link-card">
-                    <div class="link-icon">🌟</div>
-                    <div class="link-content">
-                        <h3>İhya Vakfı</h3>
-                        <p>Dini eğitim ve kurslar</p>
-                    </div>
-                </a>
+<a href="https://www.youtube.com/results?search_query=maher+al+muaiqly+quran" target="_blank" class="link-card">
+<div class="link-icon">▶️</div>
+<div><h3>Maher Al Muaiqly</h3></div>
+</a>
 
-            </div>
-        </div>
+<a href="https://www.youtube.com/results?search_query=al+sudais+quran" target="_blank" class="link-card">
+<div class="link-icon">▶️</div>
+<div><h3>Sudais</h3></div>
+</a>
 
-        <!-- CATEGORY 3: UYGULAMALAR -->
-        <div class="category">
-            <div class="category-title">
-                <h2>📱 Mobil Uygulamalar</h2>
-            </div>
-            <div class="links-grid">
+</div>
+</div>
 
-                <a href="https://play.google.com/store/apps/details?id=com.diyanet.app" target="_blank" class="link-card">
-                    <div class="link-icon">📲</div>
-                    <div class="link-content">
-                        <h3>Diyanet Mobil</h3>
-                        <p>Resmi Diyanet uygulaması</p>
-                    </div>
-                </a>
+<!-- NAMAZ -->
+<div class="category">
+<div class="category-title"><h2>🕌 Namaz & İbadet</h2></div>
+<div class="links-grid">
 
-                <a href="https://play.google.com/store/apps/details?id=com.greentech.quran" target="_blank" class="link-card">
-                    <div class="link-icon">📗</div>
-                    <div class="link-content">
-                        <h3>Kur'an Uygulaması</h3>
-                        <p>Sesli Kur'an dinleme ve okuma</p>
-                    </div>
-                </a>
+<a href="https://namazvakitleri.diyanet.gov.tr" target="_blank" class="link-card">
+<div class="link-icon">🕐</div>
+<div><h3>Namaz Vakitleri</h3></div>
+</a>
 
-                <a href="https://play.google.com/store/apps/details?id=com.islamicfinder.prayertimes" target="_blank" class="link-card">
-                    <div class="link-icon">⏰</div>
-                    <div class="link-content">
-                        <h3>Namaz Vakti</h3>
-                        <p>Ezan saatleri ve hatırlatıcı</p>
-                    </div>
-                </a>
+<a href="https://www.namazzamani.net" target="_blank" class="link-card">
+<div class="link-icon">⏰</div>
+<div><h3>Namaz Öğren</h3></div>
+</a>
 
-                <a href="https://play.google.com/store/apps/details?id=com.tesbihat" target="_blank" class="link-card">
-                    <div class="link-icon">📿</div>
-                    <div class="link-content">
-                        <h3>Dijital Tesbih</h3>
-                        <p>Zikir ve tesbih uygulaması</p>
-                    </div>
-                </a>
 
-            </div>
-        </div>
 
-        <!-- CATEGORY 4: DİĞER KAYNAKLAR -->
-        <div class="category">
-            <div class="category-title">
-                <h2>🌐 Diğer Kaynaklar</h2>
-            </div>
-            <div class="links-grid">
+<!-- DUA -->
+<div class="category">
+<div class="category-title"><h2>📿 Zikir & Dua</h2></div>
+<div class="links-grid">
 
-                <a href="https://www.islamansiklopedisi.org.tr" target="_blank" class="link-card">
-                    <div class="link-icon">📖</div>
-                    <div class="link-content">
-                        <h3>İslam Ansiklopedisi</h3>
-                        <p>TDV İslam Ansiklopedisi</p>
-                    </div>
-                </a>
+<a href="https://www.diyanet.gov.tr/tr-TR/Kurumsal/Detay/1/dua" target="_blank" class="link-card">
+<div class="link-icon">🤲</div>
+<div><h3>Diyanet Dualar</h3></div>
+</a>
 
-                <a href="https://www.kuramer.org" target="_blank" class="link-card">
-                    <div class="link-icon">🏛️</div>
-                    <div class="link-content">
-                        <h3>KURAMER</h3>
-                        <p>Kur'an Araştırmaları Merkezi</p>
-                    </div>
-                </a>
+<a href="https://www.dualar.com" target="_blank" class="link-card">
+<div class="link-icon">📖</div>
+<div><h3>Dualar.com</h3></div>
+</a>
 
-                <a href="https://www.ilmihal.net" target="_blank" class="link-card">
-                    <div class="link-icon">📘</div>
-                    <div class="link-content">
-                        <h3>İlmihal</h3>
-                        <p>İslam fıkhı ve ilmihal bilgileri</p>
-                    </div>
-                </a>
+</div>
+</div>
 
-                <a href="https://www.islamicfinder.org" target="_blank" class="link-card">
-                    <div class="link-icon">🌍</div>
-                    <div class="link-content">
-                        <h3>Islamic Finder</h3>
-                        <p>Dünya geneli İslami kaynaklar</p>
-                    </div>
-                </a>
+<!-- SOHBET -->
+<div class="category">
+<div class="category-title"><h2>🎙️ Sohbet & Ders</h2></div>
+<div class="links-grid">
 
-            </div>
-        </div>
+<a href="https://www.youtube.com/results?search_query=islami+sohbetler" target="_blank" class="link-card">
+<div class="link-icon">🎥</div>
+<div><h3>Sohbetler</h3></div>
+</a>
 
-    </div>
+<a href="https://www.youtube.com/results?search_query=tefsir+dersleri" target="_blank" class="link-card">
+<div class="link-icon">📚</div>
+<div><h3>Tefsir Dersleri</h3></div>
+</a>
 
-    <!-- FOOTER -->
-    <footer>
-        <p><strong>Marmaris Merkez Camileri Derneği</strong></p>
-        <p>📧 <a href="mailto:info@marmarismerkezcamileri.com">info@marmarismerkezcamileri.com</a></p>
-        <p>📱 <a href="tel:+905345157363">+90 534 515 73 63</a></p>
-        <p style="margin-top: 20px; opacity: 0.7;">© 2026 Marmaris Merkez Camileri Derneği</p>
-    </footer>
+</div>
+</div>
+
+<!-- ÇOCUK -->
+<div class="category">
+<div class="category-title"><h2>🧒 Çocuklar</h2></div>
+<div class="links-grid">
+
+<a href="https://www.youtube.com/results?search_query=cocuklar+icin+kuran" target="_blank" class="link-card">
+<div class="link-icon">👶</div>
+<div><h3>Çocuk Kur’an</h3></div>
+</a>
+
+<a href="https://www.youtube.com/results?search_query=islami+cizgi+film" target="_blank" class="link-card">
+<div class="link-icon">🎬</div>
+<div><h3>İslami Çizgi Film</h3></div>
+</a>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 Marmaris Camileri
+</footer>
+
+<script>
+function menu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>

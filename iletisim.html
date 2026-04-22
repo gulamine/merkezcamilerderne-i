@@ -127,14 +127,41 @@ footer{
     text-align:center;
     padding:20px;
 }
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-    <div class="logo">Marmaris Merkez Camileri</div>
-    <ul>
+    <div class="logo">🕌 Marmaris Camileri</div>
+
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
@@ -197,6 +224,10 @@ footer{
 <footer>
     © 2026 Marmaris Merkez Camileri
 </footer>
-
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 </body>
 </html>

@@ -128,16 +128,45 @@ button{
         margin:8px 0;
     }
 }
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
 
 </style>
 </head>
 
 <body>
 
-<nav>
-     <div class=> Marmaris Merkez Camileri Derneği</div>
+
+     
     
-    <ul>
+    <nav>
+    <div class="logo">🕌 Marmaris Camileri</div>
+
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
@@ -216,6 +245,10 @@ function gonder(e){
 document.getElementById("waBtn").href =
 "https://wa.me/905312345678?text=Merhaba%20reklam%20vermek%20istiyorum";
 </script>
-
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 </body>
 </html>

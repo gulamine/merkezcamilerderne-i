@@ -248,27 +248,54 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+        .menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
     </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <nav>
-        <div class="logo">🕌 Marmaris Camileri</div>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
+   <nav>
+    <div class="logo">🕌 Marmaris Camileri</div>
+
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
+        <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
         <li><a href="ezan.html">Ezan Vakitleri</a></li>
-        <li><a href="faydali-dini-linkler.html">Faydali-dini-linkler</a></li>
+        <li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
         <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
         <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="iletişim.html">İletişim</a></li>
-         <li><a href="bilgi.html">İlçe Bilgi ve Hava Durumu</a></li>
-         <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="bilgi.html">İlçe Bilgi</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
         <li><a href="sponsorlar.html">Sponsorlar</a></li>
     </ul>
-  </nav>
+</nav>
     <!-- HEADER -->
     <div class="header">
         <h1>🕌 Namaz Vakitleri</h1>
@@ -418,6 +445,10 @@
         // Sayfa yüklendiğinde vakitleri çek
         window.addEventListener('load', getPrayerTimes);
     </script>
-
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 </body>
 </html>

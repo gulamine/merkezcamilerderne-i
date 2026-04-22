@@ -118,6 +118,7 @@ footer{
         margin:8px 0;
     }
 }
+
 </style>
 </head>
 
@@ -125,8 +126,12 @@ footer{
 
 <!-- NAVBAR -->
 <nav>
-      <div class="logo">🕌 Marmaris Hava Durumu</div>
-    <ul><li><a href="index.html">Ana Sayfa</a></li>
+    <div class="logo">🕌 Marmaris Camileri</div>
+
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
+        <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="camiler.html">Camiler</a></li>
         <li><a href="etkinlikler.html">Etkinlikler</a></li>
         <li><a href="ezan.html">Ezan Vakitleri</a></li>
@@ -195,6 +200,11 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=36.85&longitude=28.27&cur
 .catch(() => {
     document.getElementById("desc").innerText = "Veri alınamadı";
 });
+</script>
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
+}
 </script>
 
 </body>
