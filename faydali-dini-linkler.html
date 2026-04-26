@@ -6,7 +6,9 @@
 <title>Faydalı Dini Linkler</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+*{margin:0;padding:0;box-sizing:
+border-box;font-family:
+'Segoe UI',sans-serif;}
 body{background:#f5f5f5;}
 
 nav{
@@ -55,6 +57,23 @@ background:#0f172a;color:white;text-align:center;
 padding:20px;margin-top:50px;
 }
 
+.category-title h2{
+color:#298523;
+position:relative;
+padding-left:10px;
+}
+
+.category-title h2::before{
+content:"";
+position:absolute;
+left:0;
+top:50%;
+transform:translateY(-50%);
+width:5px;
+height:70%;
+background:#38bdf8;
+border-radius:5px;
+}
 @media(max-width:768px){
 .menu-toggle{display:block;}
 nav ul{display:none;flex-direction:column;width:100%;}
@@ -66,21 +85,21 @@ nav ul.active{display:flex;}
 <body>
 
 <nav>
-<div class="logo">🕌 Marmaris Camileri</div>
+<div class="logo">Marmaris Merkez Camileri Derneği</div>
 <div class="menu-toggle" onclick="menu()">☰</div>
 
 <ul id="menu">
 <li><a href="index.html">Ana Sayfa</a></li>
-        <li><a href="camiler.html">Camiler</a></li>
-        <li><a href="etkinlikler.html">Etkinlikler</a></li>
-        <li><a href="ezan.html">Ezan Vakitleri</a></li>
-        <li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
-        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
-        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-        <li><a href="bilgi.html">İlçe Bilgi</a></li>
-        <li><a href="reklam.html">Reklam</a></li>
-        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+<li><a href="camiler.html">Camiler</a></li>
+<li><a href="etkinlikler.html">Etkinlikler</a></li>
+<li><a href="ezan.html">Ezan Vakitleri</a></li>
+<li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
+<li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+<li><a href="hakkimizda.html">Hakkımızda</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+<li><a href="bilgi.html">İlçe Bilgi</a></li>
+<li><a href="reklam.html">Reklam</a></li>
+<li><a href="sponsorlar.html">Sponsorlar</a></li>
 </ul>
 </nav>
 
@@ -91,26 +110,49 @@ nav ul.active{display:flex;}
 
 <div class="container">
 
-<!-- ELİF BA -->
+<!-- RESMİ KURUMLAR -->
 <div class="category">
-<div class="category-title"><h2>🧠 Kur’an Öğrenme (Elif-Ba)</h2></div>
+<div class="category-title"><h2>🏛️ Resmi Kurumlar</h2></div>
 <div class="links-grid">
+
+<a href="https://www.diyanet.gov.tr" target="_blank" class="link-card">
+<div class="link-icon">🕌</div>
+<div><h3>Diyanet İşleri Başkanlığı</h3><p>Resmi dini kurum web sitesi</p></div>
+</a>
+
+<a href="https://kuran.diyanet.gov.tr" target="_blank" class="link-card">
+<div class="link-icon">📖</div>
+<div><h3>Kur'an-ı Kerim</h3><p>Meal ve tefsir ile okuma</p></div>
+</a>
+
+<a href="https://hadis.diyanet.gov.tr" target="_blank" class="link-card">
+<div class="link-icon">📚</div>
+<div><h3>Hadis Ansiklopedisi</h3></div>
+</a>
+
 <a href="https://kuran.diyanet.gov.tr/elifba" target="_blank" class="link-card">
 <div class="link-icon">📖</div>
 <div><h3>Diyanet Elif-Ba</h3></div>
 </a>
+
 </div>
 </div>
 
 <!-- MEAL -->
 <div class="category">
-<div class="category-title"><h2>📖 Kur’an Meal & Tefsir</h2></div>
+<div class="category-title"><h2>📘 Kur’an Meal</h2></div>
 <div class="links-grid">
 
 <a href="https://kuran.diyanet.gov.tr/mushaf" target="_blank" class="link-card">
 <div class="link-icon">📘</div>
 <div><h3>Diyanet Meal</h3></div>
 </a>
+
+ <a href="https://www.ilmihal.net" target="_blank" class="link-card">
+                    <div class="link-icon">📘</div>
+                    <div class="link-content">
+                        <h3>İlmihal</h3> </div>
+                </a>
 
 <a href="https://quran.com/tr" target="_blank" class="link-card">
 <div class="link-icon">🌍</div>
@@ -121,6 +163,14 @@ nav ul.active{display:flex;}
 <div class="link-icon">📚</div>
 <div><h3>KuranMeali.com</h3></div>
 </a>
+
+<a href="https://www.islamicfinder.org" target="_blank" class="link-card">
+                    <div class="link-icon">🌍</div>
+                    <div class="link-content">
+                        <h3>Islamic Finder</h3>
+                        <p>Dünya geneli İslami kaynaklar</p>
+                    </div>
+                </a>
 
 </div>
 </div>
@@ -140,6 +190,21 @@ nav ul.active{display:flex;}
 <div><h3>MP3 Quran</h3></div>
 </a>
 
+<a href="https://www.youtube.com/watch?v=jBjCP2yAM5M" target="_blank" class="link-card">
+<div class="link-icon">▶️</div>
+<div><h3>Kabe Canlı</h3></div>
+</a>
+
+<a href="https://www.diyanethaber.com.tr/diyanet-tv-canli-yayin" target="_blank" class="link-card">
+<div class="link-icon">▶️</div>
+<div><h3>Diyanet Canlı</h3></div>
+</a>
+<a href="https://www.youtube.com/watch?v=3XHebGJG0bc" target="_blank" class="link-card">
+<div class="link-icon">▶️</div>
+<div><h3>TRT Haber İzle</h3></div>
+</a>
+
+
 <a href="https://www.youtube.com/results?search_query=abdul+basit+quran" target="_blank" class="link-card">
 <div class="link-icon">▶️</div>
 <div><h3>Abdul Basit</h3></div>
@@ -155,6 +220,16 @@ nav ul.active{display:flex;}
 <div><h3>Sudais</h3></div>
 </a>
 
+<a href="https://www.canliradyodinle.fm/radyolar/islami-radyolar" target="_blank" class="link-card">
+<div class="link-icon">📻</div>
+<div><h3>Diyanet Radyo</h3></div>
+</a>
+
+<a href="https://www.canliradyodinle.fm/hedef-fm" target="_blank" class="link-card">
+<div class="link-icon">📻</div>
+<div><h3>Hedef Radyo</h3></div>
+</a>
+
 </div>
 </div>
 
@@ -168,26 +243,27 @@ nav ul.active{display:flex;}
 <div><h3>Namaz Vakitleri</h3></div>
 </a>
 
-<a href="https://www.namazzamani.net" target="_blank" class="link-card">
+<a href="https://www.namazzamani.net/turkce/" target="_blank" class="link-card">
 <div class="link-icon">⏰</div>
 <div><h3>Namaz Öğren</h3></div>
 </a>
 
-
+</div>
+</div>
 
 <!-- DUA -->
 <div class="category">
 <div class="category-title"><h2>📿 Zikir & Dua</h2></div>
 <div class="links-grid">
 
-<a href="https://www.diyanet.gov.tr/tr-TR/Kurumsal/Detay/1/dua" target="_blank" class="link-card">
+<a href="https://www.youtube.com/channel/UCmtC7LTnXDfKG8RVnRnOy7Q" target="_blank" class="link-card">
 <div class="link-icon">🤲</div>
-<div><h3>Diyanet Dualar</h3></div>
+<div><h3>Sohbet ve Dualar</h3></div>
 </a>
 
-<a href="https://www.dualar.com" target="_blank" class="link-card">
+<a href="https://www.youtube.com/watch?v=XDmRG1JMoxQ" target="_blank" class="link-card">
 <div class="link-icon">📖</div>
-<div><h3>Dualar.com</h3></div>
+<div><h3>Rukye Duaları</h3></div>
 </a>
 
 </div>
@@ -198,12 +274,12 @@ nav ul.active{display:flex;}
 <div class="category-title"><h2>🎙️ Sohbet & Ders</h2></div>
 <div class="links-grid">
 
-<a href="https://www.youtube.com/results?search_query=islami+sohbetler" target="_blank" class="link-card">
+<a href="https://www.youtube.com/@hayalhanem" target="_blank" class="link-card">
 <div class="link-icon">🎥</div>
 <div><h3>Sohbetler</h3></div>
 </a>
 
-<a href="https://www.youtube.com/results?search_query=tefsir+dersleri" target="_blank" class="link-card">
+<a href="https://www.youtube.com/watch?v=k1xVGR3arhI" target="_blank" class="link-card">
 <div class="link-icon">📚</div>
 <div><h3>Tefsir Dersleri</h3></div>
 </a>
@@ -226,15 +302,23 @@ nav ul.active{display:flex;}
 <div><h3>İslami Çizgi Film</h3></div>
 </a>
 
+<a href="https://www.youtube.com/@Elnara-b9d" target="_blank" class="link-card">
+<div class="link-icon">🎬</div>
+<div><h3>Masal Dinle</h3></div>
+</a>
+
 </div>
 </div>
 
 </div>
 
-<footer>
-© 2026 Marmaris Camileri
-</footer>
-
+<!-- FOOTER -->
+    <footer>
+        <p><strong>Marmaris Merkez Camileri Derneği</strong></p>
+        <p>📧 <a href="mailto:info@marmarismerkezcamileri.com">info@marmarismerkezcamileri.com</a></p>
+        <p>📱 <a href="tel:+905345157363">+90 534 515 73 63</a></p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2026 Marmaris Merkez Camileri Derneği</p>
+    </footer>
 <script>
 function menu(){
 document.getElementById("menu").classList.toggle("active");

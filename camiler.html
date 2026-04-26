@@ -3,184 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camiler - Marmaris</title>
+<title>Camiler</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#f5f5f5;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f5f5;
+}
 
 /* NAVBAR */
 nav{
-background:#0f172a;color:white;padding:15px 20px;
-display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    background:#0f172a;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-.logo{color:#38bdf8;font-weight:bold;}
-.menu-toggle{display:none;font-size:28px;cursor:pointer;}
 
-nav ul{display:flex;list-style:none;gap:10px;flex-wrap:wrap;}
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
 nav ul li a{
-color:white;text-decoration:none;padding:8px 12px;border-radius:6px;
+    color:white;
+    text-decoration:none;
 }
-nav ul li a:hover{background:#38bdf8;}
 
-/* HEADER */
-.header{
-background:linear-gradient(135deg,#0f172a,#1e293b);
-color:white;text-align:center;padding:60px 20px;
-}
-.header h1{font-size:34px;margin-bottom:10px;}
-
-/* SEARCH */
+/* ARAMA */
 .search{
-text-align:center;margin-top:-30px;
+    padding:20px;
+    text-align:center;
 }
+
 .search input{
-width:300px;
-padding:12px;
-border-radius:8px;
-border:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    width:300px;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
 }
 
-/* GRID */
+/* LİSTE */
 .container{
-padding:30px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
 }
 
-/* CARD */
 .card{
-background:white;
-padding:20px;
-border-radius:14px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-transition:.3s;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-.card:hover{transform:translateY(-6px);}
+.card h3{
+    color:#0f172a;
+}
 
-.card h3{color:#0f172a;margin-bottom:8px;}
-.card p{color:#555;margin-bottom:10px;}
+.card p{
+    font-size:14px;
+    color:#555;
+}
 
 .btn{
-display:inline-block;
-padding:8px 12px;
-background:#38bdf8;
-color:white;
-text-decoration:none;
-border-radius:6px;
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
 }
 
 /* FOOTER */
 footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li{
+        margin: 5px 0;
+    }
+
+    .header h1{
+        font-size: 22px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .btn{
+        display:block;
+        margin:8px 0;
+    }
+}
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
 }
 
-/* MOBILE */
 @media(max-width:768px){
-.menu-toggle{display:block;}
-nav ul{display:none;flex-direction:column;width:100%;margin-top:10px;}
-nav ul.active{display:flex;}
 
-.search input{width:90%;}
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-<div class="logo">🕌 Marmaris Camileri</div>
-<div class="menu-toggle" onclick="menu()">☰</div>
-
-<ul id="menu">
-<li><a href="index.html">Ana Sayfa</a></li>
-<li><a href="camiler.html">Camiler</a></li>
-<li><a href="etkinlikler.html">Etkinlikler</a></li>
-<li><a href="ezan.html">Ezan Vakitleri</a></li>
-<li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
-<li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
-<li><a href="hakkimizda.html">Hakkımızda</a></li>
-<li><a href="iletisim.html">İletişim</a></li>
-<li><a href="bilgi.html">İlçe Bilgi</a></li>
-<li><a href="reklam.html">Reklam</a></li>
-<li><a href="sponsorlar.html">Sponsorlar</a></li>
-</ul>
+      <div class="logo">Marmaris Merkez Camileri Derneği</div>
+      <div class="menu-toggle" onclick="menu()">☰</div>
+    <ul id="menu">
+    
+       <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="bilgi.html">İlçe Bilgi</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+    </ul>
 </nav>
 
-<div class="header">
-<h1>🕌 Camiler</h1>
-<p>Marmaris'teki tüm camiler</p>
+<!-- ARAMA -->
+<div class="search">
+    <input type="text" id="arama" placeholder="Cami ara...">
 </div>
 
-<div class="search">
-<input type="text" id="arama" placeholder="Cami ara...">
-</div>
+<!-- CAMİLER -->
 
 <div class="container" id="liste">
 
-<div class="card">
-<h3>Eski Camii</h3><p>Tepe Mahallesi</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.855,28.274">📍 Yol Tarifi</a>
+
+    <div class="card">
+        <h3>Eski Camii</h3><p>Tepe Mahallesi</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.855,28.274">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Yeni Camii</h3><p>Kemeraltı</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.853,28.272">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Sarıana Camii</h3><p>Merkez</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.856,28.275">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Yeşil Camii</h3><p>Hatipirimi</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.857,28.276">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Armutalan Camii</h3><p>Armutalan</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.870,28.260">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>İçmeler Camii</h3><p>İçmeler</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.800,28.233">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Turunç Camii</h3><p>Turunç</p>
+        <a target="_blank" class="btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=36.760,28.250">
+        📍 Yol Tarifi
+        </a>
+    </div>
+
 </div>
 
-<div class="card">
-<h3>Yeni Camii</h3><p>Kemeraltı</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.853,28.272">📍 Yol Tarifi</a>
-</div>
-
-<div class="card">
-<h3>Sarıana Camii</h3><p>Merkez</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.856,28.275">📍 Yol Tarifi</a>
-</div>
-
-<div class="card">
-<h3>Yeşil Camii</h3><p>Hatipirimi</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.857,28.276">📍 Yol Tarifi</a>
-</div>
-
-<div class="card">
-<h3>Armutalan Camii</h3><p>Armutalan</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.870,28.260">📍 Yol Tarifi</a>
-</div>
-
-<div class="card">
-<h3>İçmeler Camii</h3><p>İçmeler</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.800,28.233">📍 Yol Tarifi</a>
-</div>
-
-<div class="card">
-<h3>Turunç Camii</h3><p>Turunç</p>
-<a target="_blank" class="btn" href="https://www.google.com/maps/dir/?api=1&destination=36.760,28.250">📍 Yol Tarifi</a>
-</div>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-© 2026 Marmaris Camileri
+    © 2026 Marmaris Merkez Camileri Derneği
 </footer>
 
 <script>
 // ARAMA
 document.getElementById("arama").addEventListener("keyup", function(){
-let deger = this.value.toLowerCase();
-let kartlar = document.querySelectorAll(".card");
+    let deger = this.value.toLowerCase();
+    let kartlar = document.querySelectorAll(".card");
 
-kartlar.forEach(kart => {
-let isim = kart.innerText.toLowerCase();
-kart.style.display = isim.includes(deger) ? "block" : "none";
+    kartlar.forEach(kart => {
+        let isim = kart.innerText.toLowerCase();
+        if(isim.includes(deger)){
+            kart.style.display = "block";
+        }else{
+            kart.style.display = "none";
+        }
+    });
 });
-});
-
-// MENU
+</script>
+<script>
 function menu(){
-document.getElementById("menu").classList.toggle("active");
+    document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
